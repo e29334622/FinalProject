@@ -103,25 +103,51 @@ public class chinese extends AppCompatActivity {
         //建立資料來源(字串)
 
 
+        /*
         String[] SetOrSingleArray = new String[]{"套餐", "單點"};
         //建立Adapter物件,並放入字串與simple_spinner_item
         ArrayAdapter<String> SetOrSingleAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, SetOrSingleArray);
         //連接spinner元件,並連結MyAdapter
         Spinner spinner2 = findViewById(R.id.spinner2);
         spinner2.setAdapter(SetOrSingleAdapter);
+         */
 
 
 
-        TextView textView2 = findViewById(R.id.textView2);
+        TextView tv_ShowMeal = findViewById(R.id.tv_ShowMeal);
+        Button btn_set = findViewById(R.id.btn_set);
+        Button btn_single = findViewById(R.id.btn_single);
+        Button btn_send = findViewById(R.id.btn_send);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0) {
-                    String[] set01 = getResources().getStringArray(R.array.Price);
-                    textView2.setText("hello");
+                    btn_single.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            tv_ShowMeal.setText("大麥克單點$72");
+                        }
+                    });
+                    btn_set.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            tv_ShowMeal.setText("大麥克套餐$127");
+                        }
+                    });
                 }
                 else if(position == 1) {
-                    textView2.setText("hello22");
+                    btn_single.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            tv_ShowMeal.setText("雙層牛肉吉事堡單點$62");
+                        }
+                    });
+                    btn_set.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            tv_ShowMeal.setText("雙層牛肉吉事堡套餐$117");
+                        }
+                    });
                 }
             }
 
@@ -130,6 +156,13 @@ public class chinese extends AppCompatActivity {
 
             }
         });
+        btn_send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+
 
     }
 }
