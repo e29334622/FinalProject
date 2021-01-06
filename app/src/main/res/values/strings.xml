@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">FinalProject</string>
-    <string-array name="Price">
-        <item>單點$72</item>
-        <item>套餐$127</item>
-    </string-array>
+
 </resources>
 
